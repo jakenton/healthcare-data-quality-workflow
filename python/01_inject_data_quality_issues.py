@@ -169,7 +169,7 @@ for idx in insurance_variation_indexes:
 print(f"Insurance Provider variations added: {len(insurance_variation_indexes):,}")
                                               
                                               
-                                              # %%
+# %%
 # --------------------------------------------------------------------------------------------------
 # Issue 5: Leading and trailing spaces
 # Real-world reason: Extra spaces commonly appear in exported text fields and can break matching.
@@ -180,7 +180,7 @@ space_indexes = get_random_indexes(messy_df, 0.05)
 space_columns = ["Insurance Provider", "Admission Type", "Test Results"]
 
 for idx in space_indexes:
-      column = np.random.choice(spaces_columns)
+      column = np.random.choice(space_columns)
       value = messy_df.loc[idx, column]
 
       if pd.notna(value):
@@ -188,6 +188,7 @@ for idx in space_indexes:
 
 print(f"Leading/trailing spaces added: {len(space_indexes):,}")
 
+# %%
 # ----------------------------------------------------------------------------------------------
 # Issue 6: Missing Billing Amount values
 # Real-world reason: Billing fields may be black if charges are pending or failed to export.
@@ -199,6 +200,7 @@ messy_df.loc[missing_billing_indexes, "Billing Amount"] = np.nan
 
 print(f"Missing Billing Amount values added: {len(missing_billing_indexes):,}")
 
+# %%
 # ----------------------------------------------------------------------------------------------------
 # Issue 7: Duplicate records
 # Real-world reason: Duplicate records can appear when exports are combined or accidentally appended.
@@ -236,7 +238,7 @@ summary = {
       "Missing Doctor Added": len(missing_doctor_indexes),
       "Missing Hospital Added": len(missing_hospital_indexes),
       "Hospital Naming Variations Added": len(hospital_variation_indexes),
-      "Insurance Provder Variations Added": len(insurance_variation_indexes),
+      "Insurance Provider Variations Added": len(insurance_variation_indexes),
       "Rows With Extra Spaces Added": len(space_indexes),
       "Missing Billing Amount Added": len(missing_billing_indexes),
       "Duplicate Records Added": len(duplicate_rows)
@@ -244,7 +246,8 @@ summary = {
 
 summary_df = pd.DataFrame(
       summary.items(),
-      columns=["Data Quality Issue," "Count"]
+      columns=["Data Quality Issue", "Count"]
 )
 
 print(summary_df)
+# %%

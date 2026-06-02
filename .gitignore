@@ -23,3 +23,6 @@ Thumbs.db
 
 # Compressed Files
 *.zip
+
+# Logs
+*.log
