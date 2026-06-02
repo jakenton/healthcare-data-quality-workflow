@@ -42,7 +42,7 @@ np.random.seed(42)
 PROJECT_ROOT = Path(__file__).parents[1]
 
 RAW_FILE = PROJECT_ROOT / "data" / "raw" / "healthcare_dataset.csv"
-MESSY_FILE = PROJECT_ROOT / "data" / "raw" / "healthcare_dataset_messy.csv"
+MESSY_FILE = PROJECT_ROOT / "data" / "messy" / "healthcare_dataset_messy.csv"
 
 # %%
 # -------------------------------------------------------------------------
